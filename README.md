@@ -49,7 +49,7 @@ It focuses on modeling shipment data, tracking events, and building API endpoint
 | Framework | ASP.NET Core 10 Web API |
 | Language | C# |
 | Architecture | Controller-based REST API |
-| Data | In-memory mock data (30 realistic shipments) |
+| Data | In-memory mock data (27 realistic shipments) |
 | CORS | Configured for frontend origin |
 | Deploy | Render |
 
@@ -63,7 +63,7 @@ ShipTrackApi/
 │   └── ShipmentsController.cs   # API endpoints
 ├── Models/
 │   ├── Shipment.cs              # Shipment and TrackingEvent models
-│   └── ShipmentData.cs          # Mock data (30 shipments)
+│   └── ShipmentData.cs          # Mock data (27 shipments)
 ├── Program.cs                   # App setup, CORS, routing
 └── ShipTrackApi.csproj
 ```
@@ -171,4 +171,4 @@ The API will be available at `http://localhost:5141`.
 
 ---
 
-Built by [Meg Dadjafari](https://meghdadjafari.dev)
+Built by [Meghdad jafari](https://meghdadjafari.dev)
