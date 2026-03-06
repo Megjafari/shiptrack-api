@@ -68,8 +68,8 @@ public class ShipmentsController : ControllerBase
     [HttpGet("stats")]
     public IActionResult GetStats()
     {
-        var last7Days = Enumerable.Range(0, 7)
-            .Select(i => DateTime.Today.AddDays(-6 + i))
+        var last30Days = Enumerable.Range(0, 30)
+            .Select(i => DateTime.Today.AddDays(-29 + i))
             .Select(date => new
             {
                 date = date.ToString("dd MMM"),
@@ -80,7 +80,7 @@ public class ShipmentsController : ControllerBase
             })
             .ToList();
 
-        return Ok(last7Days);
+        return Ok(last30Days);
     }
 }
 
