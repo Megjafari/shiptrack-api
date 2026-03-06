@@ -63,6 +63,25 @@ public class ShipmentsController : ControllerBase
         ShipmentData.Shipments.Add(shipment);
         return CreatedAtAction(nameof(GetById), new { id = newId }, shipment);
     }
+
+
+    [HttpGet("stats")]
+    public IActionResult GetStats()
+    {
+        var last7Days = Enumerable.Range(0, 7)
+            .Select(i => DateTime.Today.AddDays(-6 + i))
+            .Select(date => new
+            {
+                date = date.ToString("dd MMM"),
+                count = ShipmentData.Shipments.Count(s =>
+                    s.History.Any(h =>
+                        h.Event == "Order placed" &&
+                        h.Time.Contains(date.ToString("d MMM"))))
+            })
+            .ToList();
+
+        return Ok(last7Days);
+    }
 }
 
 public record CreateShipmentRequest(
