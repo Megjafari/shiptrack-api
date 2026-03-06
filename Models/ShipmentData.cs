@@ -4,100 +4,23 @@ public static class ShipmentData
 {
     public static List<Shipment> Shipments { get; } = new()
     {
-        new Shipment
-        {
-            Id = "CNT-2025-00142",
-            SenderName = "Volvo AB",
-            SenderCity = "Göteborg",
-            RecipientName = "Scania Parts",
-            RecipientCity = "Stockholm",
-            Carrier = "DHL",
-            Status = "transit",
-            ETA = "5 mar 2025",
-            History = new List<TrackingEvent>
-            {
-                new TrackingEvent { Event = "Order placed", Time = "1 mar, 09:12", Done = true },
-                new TrackingEvent { Event = "Picked up by carrier", Time = "2 mar, 14:30", Done = true },
-                new TrackingEvent { Event = "In transit", Time = "3 mar, 08:00", Done = false, Active = true },
-                new TrackingEvent { Event = "Out for delivery", Time = "", Done = false },
-                new TrackingEvent { Event = "Delivered", Time = "", Done = false }
-            }
-        },
-        new Shipment
-        {
-            Id = "CNT-2025-00139",
-            SenderName = "IKEA Sverige",
-            SenderCity = "Älmhult",
-            RecipientName = "Privatkund",
-            RecipientCity = "Malmö",
-            Carrier = "PostNord",
-            Status = "delivered",
-            ETA = "2 mar 2025",
-            History = new List<TrackingEvent>
-            {
-                new TrackingEvent { Event = "Order placed", Time = "28 feb, 10:00", Done = true },
-                new TrackingEvent { Event = "Picked up by carrier", Time = "28 feb, 16:45", Done = true },
-                new TrackingEvent { Event = "In transit", Time = "1 mar, 07:00", Done = true },
-                new TrackingEvent { Event = "Out for delivery", Time = "2 mar, 09:30", Done = true },
-                new TrackingEvent { Event = "Delivered", Time = "2 mar, 13:47", Done = true }
-            }
-        },
-        new Shipment
-        {
-            Id = "CNT-2025-00136",
-            SenderName = "H&M Logistik",
-            SenderCity = "Stockholm",
-            RecipientName = "Butik Väst",
-            RecipientCity = "Göteborg",
-            Carrier = "Bring",
-            Status = "delayed",
-            ETA = "4 mar 2025",
-            History = new List<TrackingEvent>
-            {
-                new TrackingEvent { Event = "Order placed", Time = "28 feb, 08:00", Done = true },
-                new TrackingEvent { Event = "Picked up by carrier", Time = "1 mar, 12:00", Done = true },
-                new TrackingEvent { Event = "In transit", Time = "2 mar, 06:00", Done = true },
-                new TrackingEvent { Event = "Delayed – weather", Time = "3 mar, 11:00", Done = false, Active = true },
-                new TrackingEvent { Event = "Delivered", Time = "", Done = false }
-            }
-        },
-        new Shipment
-        {
-            Id = "CNT-2025-00155",
-            SenderName = "Kappahl",
-            SenderCity = "Mölndal",
-            RecipientName = "Butik Nord",
-            RecipientCity = "Umeå",
-            Carrier = "PostNord",
-            Status = "pending",
-            ETA = "8 mar 2025",
-            History = new List<TrackingEvent>
-            {
-                new TrackingEvent { Event = "Order placed", Time = "4 mar, 16:22", Done = true },
-                new TrackingEvent { Event = "Picked up by carrier", Time = "", Done = false, Active = true },
-                new TrackingEvent { Event = "In transit", Time = "", Done = false },
-                new TrackingEvent { Event = "Out for delivery", Time = "", Done = false },
-                new TrackingEvent { Event = "Delivered", Time = "", Done = false }
-            }
-        },
-        new Shipment
-        {
-            Id = "CNT-2025-00157",
-            SenderName = "Sandvik AB",
-            SenderCity = "Sandviken",
-            RecipientName = "Atlas Copco",
-            RecipientCity = "Nacka",
-            Carrier = "DHL",
-            Status = "transit",
-            ETA = "7 mar 2025",
-            History = new List<TrackingEvent>
-            {
-                new TrackingEvent { Event = "Order placed", Time = "4 mar, 08:00", Done = true },
-                new TrackingEvent { Event = "Picked up by carrier", Time = "4 mar, 15:00", Done = true },
-                new TrackingEvent { Event = "In transit", Time = "5 mar, 07:00", Done = false, Active = true },
-                new TrackingEvent { Event = "Out for delivery", Time = "", Done = false },
-                new TrackingEvent { Event = "Delivered", Time = "", Done = false }
-            }
-        }
+        // Today / very recent
+        new Shipment { Id = "CNT-2026-00201", SenderName = "Volvo AB", SenderCity = "Göteborg", RecipientName = "Scania Parts", RecipientCity = "Stockholm", Carrier = "DHL", Status = "transit", ETA = "7 mar 2026", History = new List<TrackingEvent> { new TrackingEvent { Event = "Order placed", Time = "5 mar, 08:00", Done = true }, new TrackingEvent { Event = "Picked up by carrier", Time = "5 mar, 14:30", Done = true }, new TrackingEvent { Event = "In transit", Time = "6 mar, 07:00", Done = false, Active = true }, new TrackingEvent { Event = "Out for delivery", Time = "", Done = false }, new TrackingEvent { Event = "Delivered", Time = "", Done = false } } },
+        new Shipment { Id = "CNT-2026-00202", SenderName = "Ericsson AB", SenderCity = "Stockholm", RecipientName = "Tech Park", RecipientCity = "Linköping", Carrier = "PostNord", Status = "transit", ETA = "7 mar 2026", History = new List<TrackingEvent> { new TrackingEvent { Event = "Order placed", Time = "5 mar, 10:00", Done = true }, new TrackingEvent { Event = "Picked up by carrier", Time = "5 mar, 16:00", Done = true }, new TrackingEvent { Event = "In transit", Time = "6 mar, 08:00", Done = false, Active = true }, new TrackingEvent { Event = "Out for delivery", Time = "", Done = false }, new TrackingEvent { Event = "Delivered", Time = "", Done = false } } },
+        new Shipment { Id = "CNT-2026-00203", SenderName = "Axfood", SenderCity = "Stockholm", RecipientName = "Butik Öst", RecipientCity = "Norrköping", Carrier = "Budbee", Status = "pending", ETA = "8 mar 2026", History = new List<TrackingEvent> { new TrackingEvent { Event = "Order placed", Time = "6 mar, 08:22", Done = true }, new TrackingEvent { Event = "Awaiting pickup", Time = "", Done = false, Active = true }, new TrackingEvent { Event = "In transit", Time = "", Done = false }, new TrackingEvent { Event = "Out for delivery", Time = "", Done = false }, new TrackingEvent { Event = "Delivered", Time = "", Done = false } } },
+        new Shipment { Id = "CNT-2026-00204", SenderName = "Kappahl", SenderCity = "Mölndal", RecipientName = "Butik Nord", RecipientCity = "Umeå", Carrier = "PostNord", Status = "pending", ETA = "9 mar 2026", History = new List<TrackingEvent> { new TrackingEvent { Event = "Order placed", Time = "6 mar, 09:15", Done = true }, new TrackingEvent { Event = "Awaiting pickup", Time = "", Done = false, Active = true }, new TrackingEvent { Event = "In transit", Time = "", Done = false }, new TrackingEvent { Event = "Out for delivery", Time = "", Done = false }, new TrackingEvent { Event = "Delivered", Time = "", Done = false } } },
+        new Shipment { Id = "CNT-2026-00205", SenderName = "H&M Logistik", SenderCity = "Stockholm", RecipientName = "Butik Väst", RecipientCity = "Göteborg", Carrier = "Bring", Status = "delayed", ETA = "5 mar 2026", History = new List<TrackingEvent> { new TrackingEvent { Event = "Order placed", Time = "3 mar, 08:00", Done = true }, new TrackingEvent { Event = "Picked up by carrier", Time = "3 mar, 15:00", Done = true }, new TrackingEvent { Event = "In transit", Time = "4 mar, 07:00", Done = true }, new TrackingEvent { Event = "Delayed – weather", Time = "5 mar, 06:00", Done = false, Active = true }, new TrackingEvent { Event = "Delivered", Time = "", Done = false } } },
+        new Shipment { Id = "CNT-2026-00206", SenderName = "Spotify AB", SenderCity = "Stockholm", RecipientName = "Kontor Väst", RecipientCity = "Göteborg", Carrier = "Bring", Status = "delayed", ETA = "4 mar 2026", History = new List<TrackingEvent> { new TrackingEvent { Event = "Order placed", Time = "2 mar, 09:00", Done = true }, new TrackingEvent { Event = "Picked up by carrier", Time = "2 mar, 17:00", Done = true }, new TrackingEvent { Event = "In transit", Time = "3 mar, 08:00", Done = true }, new TrackingEvent { Event = "Delayed – sorting error", Time = "4 mar, 10:00", Done = false, Active = true }, new TrackingEvent { Event = "Delivered", Time = "", Done = false } } },
+
+        // Delivered recently
+        new Shipment { Id = "CNT-2026-00195", SenderName = "IKEA Sverige", SenderCity = "Älmhult", RecipientName = "Privatkund", RecipientCity = "Malmö", Carrier = "PostNord", Status = "delivered", ETA = "5 mar 2026", History = new List<TrackingEvent> { new TrackingEvent { Event = "Order placed", Time = "3 mar, 10:00", Done = true }, new TrackingEvent { Event = "Picked up by carrier", Time = "3 mar, 16:00", Done = true }, new TrackingEvent { Event = "In transit", Time = "4 mar, 07:00", Done = true }, new TrackingEvent { Event = "Out for delivery", Time = "5 mar, 09:00", Done = true }, new TrackingEvent { Event = "Delivered", Time = "5 mar, 13:47", Done = true } } },
+        new Shipment { Id = "CNT-2026-00193", SenderName = "Systembolaget", SenderCity = "Stockholm", RecipientName = "Butik Syd", RecipientCity = "Helsingborg", Carrier = "Budbee", Status = "delivered", ETA = "4 mar 2026", History = new List<TrackingEvent> { new TrackingEvent { Event = "Order placed", Time = "2 mar, 11:00", Done = true }, new TrackingEvent { Event = "Picked up by carrier", Time = "2 mar, 16:00", Done = true }, new TrackingEvent { Event = "In transit", Time = "3 mar, 08:00", Done = true }, new TrackingEvent { Event = "Out for delivery", Time = "4 mar, 10:00", Done = true }, new TrackingEvent { Event = "Delivered", Time = "4 mar, 15:22", Done = true } } },
+        new Shipment { Id = "CNT-2026-00191", SenderName = "Sandvik AB", SenderCity = "Sandviken", RecipientName = "Atlas Copco", RecipientCity = "Nacka", Carrier = "DHL", Status = "delivered", ETA = "3 mar 2026", History = new List<TrackingEvent> { new TrackingEvent { Event = "Order placed", Time = "1 mar, 08:00", Done = true }, new TrackingEvent { Event = "Picked up by carrier", Time = "1 mar, 14:00", Done = true }, new TrackingEvent { Event = "In transit", Time = "2 mar, 07:00", Done = true }, new TrackingEvent { Event = "Out for delivery", Time = "3 mar, 09:00", Done = true }, new TrackingEvent { Event = "Delivered", Time = "3 mar, 13:10", Done = true } } },
+        new Shipment { Id = "CNT-2026-00189", SenderName = "SKF Sverige", SenderCity = "Göteborg", RecipientName = "Verkstad AB", RecipientCity = "Borås", Carrier = "Bring", Status = "delivered", ETA = "2 mar 2026", History = new List<TrackingEvent> { new TrackingEvent { Event = "Order placed", Time = "28 feb, 11:00", Done = true }, new TrackingEvent { Event = "Picked up by carrier", Time = "28 feb, 16:00", Done = true }, new TrackingEvent { Event = "In transit", Time = "1 mar, 07:00", Done = true }, new TrackingEvent { Event = "Out for delivery", Time = "2 mar, 08:00", Done = true }, new TrackingEvent { Event = "Delivered", Time = "2 mar, 12:15", Done = true } } },
+        new Shipment { Id = "CNT-2026-00187", SenderName = "Autoliv AB", SenderCity = "Vårgårda", RecipientName = "Volvo Cars", RecipientCity = "Göteborg", Carrier = "DHL", Status = "delivered", ETA = "1 mar 2026", History = new List<TrackingEvent> { new TrackingEvent { Event = "Order placed", Time = "27 feb, 14:00", Done = true }, new TrackingEvent { Event = "Picked up by carrier", Time = "28 feb, 09:00", Done = true }, new TrackingEvent { Event = "In transit", Time = "28 feb, 14:00", Done = true }, new TrackingEvent { Event = "Out for delivery", Time = "1 mar, 09:00", Done = true }, new TrackingEvent { Event = "Delivered", Time = "1 mar, 11:45", Done = true } } },
+        new Shipment { Id = "CNT-2026-00185", SenderName = "Alfa Laval", SenderCity = "Lund", RecipientName = "Industri Nord", RecipientCity = "Sundsvall", Carrier = "PostNord", Status = "delivered", ETA = "28 feb 2026", History = new List<TrackingEvent> { new TrackingEvent { Event = "Order placed", Time = "25 feb, 09:00", Done = true }, new TrackingEvent { Event = "Picked up by carrier", Time = "25 feb, 15:00", Done = true }, new TrackingEvent { Event = "In transit", Time = "26 feb, 07:00", Done = true }, new TrackingEvent { Event = "Out for delivery", Time = "28 feb, 09:00", Done = true }, new TrackingEvent { Event = "Delivered", Time = "28 feb, 14:30", Done = true } } },
+        new Shipment { Id = "CNT-2026-00183", SenderName = "Electrolux", SenderCity = "Stockholm", RecipientName = "MediaMarkt", RecipientCity = "Uppsala", Carrier = "DHL", Status = "delivered", ETA = "27 feb 2026", History = new List<TrackingEvent> { new TrackingEvent { Event = "Order placed", Time = "24 feb, 10:00", Done = true }, new TrackingEvent { Event = "Picked up by carrier", Time = "24 feb, 16:00", Done = true }, new TrackingEvent { Event = "In transit", Time = "25 feb, 07:00", Done = true }, new TrackingEvent { Event = "Out for delivery", Time = "27 feb, 09:00", Done = true }, new TrackingEvent { Event = "Delivered", Time = "27 feb, 13:20", Done = true } } },
+        new Shipment { Id = "CNT-2026-00181", SenderName = "Husqvarna AB", SenderCity = "Huskvarna", RecipientName = "Trädgård AB", RecipientCity = "Västerås", Carrier = "Bring", Status = "delivered", ETA = "26 feb 2026", History = new List<TrackingEvent> { new TrackingEvent { Event = "Order placed", Time = "23 feb, 11:00", Done = true }, new TrackingEvent { Event = "Picked up by carrier", Time = "23 feb, 17:00", Done = true }, new TrackingEvent { Event = "In transit", Time = "24 feb, 07:00", Done = true }, new TrackingEvent { Event = "Out for delivery", Time = "26 feb, 09:00", Done = true }, new TrackingEvent { Event = "Delivered", Time = "26 feb, 15:00", Done = true } } },
+        new Shipment { Id = "CNT-2026-00179", SenderName = "Scania AB", SenderCity = "Södertälje", RecipientName = "Motor AB", RecipientCity = "Örebro", Carrier = "DHL", Status = "delivered", ETA = "25 feb 2026", History = new List<TrackingEvent> { new TrackingEvent { Event = "Order placed", Time = "22 feb, 09:00", Done = true }, new TrackingEvent { Event = "Picked up by carrier", Time = "22 feb, 15:00", Done = true }, new TrackingEvent { Event = "In transit", Time = "23 feb, 07:00", Done = true }, new TrackingEvent { Event = "Out for delivery", Time = "25 feb, 09:00", Done = true }, new TrackingEvent { Event = "Delivered", Time = "25 feb, 12:40", Done = true } } },
     };
 }
