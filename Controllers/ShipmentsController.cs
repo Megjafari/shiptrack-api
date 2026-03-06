@@ -76,7 +76,7 @@ public class ShipmentsController : ControllerBase
                 count = ShipmentData.Shipments.Count(s =>
                     s.History.Any(h =>
                         h.Event == "Order placed" &&
-                        h.Time.Contains(date.ToString("d MMM"))))
+                        h.Time.StartsWith(date.Day + " " + date.ToString("MMM").ToLower())))
             })
             .ToList();
 
