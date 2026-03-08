@@ -38,7 +38,7 @@ public class ShipmentsController : ControllerBase
     [HttpPost]
     public IActionResult Create([FromBody] CreateShipmentRequest request)
     {
-        var newId = $"CNT-2025-{Random.Shared.Next(10000, 99999)}";
+        var newId = $"CNT-2026-{Random.Shared.Next(10000, 99999)}";
 
         var shipment = new Shipment
         {
@@ -50,6 +50,7 @@ public class ShipmentsController : ControllerBase
             Carrier = request.Carrier,
             Status = "pending",
             ETA = request.ETA,
+            Weight = request.Weight,
             History = new List<TrackingEvent>
             {
                 new TrackingEvent { Event = "Order placed", Time = DateTime.Now.ToString("d MMM, HH:mm"), Done = true },
@@ -63,7 +64,6 @@ public class ShipmentsController : ControllerBase
         ShipmentData.Shipments.Add(shipment);
         return CreatedAtAction(nameof(GetById), new { id = newId }, shipment);
     }
-
 
     [HttpGet("stats")]
     public IActionResult GetStats()
@@ -90,5 +90,6 @@ public record CreateShipmentRequest(
     string RecipientName,
     string RecipientCity,
     string Carrier,
-    string ETA
+    string ETA,
+    double? Weight
 );
