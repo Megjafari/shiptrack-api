@@ -10,6 +10,7 @@ public class Shipment
     public string Carrier { get; set; } = string.Empty;
     public string Status { get; set; } = string.Empty;
     public string ETA { get; set; } = string.Empty;
+    public double? Weight { get; set; }
     public List<TrackingEvent> History { get; set; } = new();
 }
 
