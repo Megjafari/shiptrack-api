@@ -1,8 +1,9 @@
 # ShipTrack API
 
-![ASP.NET Core](https://img.shields.io/badge/ASP.NET%20Core-10.0-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)
+![ASP.NET Core](https://img.shields.io/badge/ASP.NET%20Core-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)
 ![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp&logoColor=white)
 ![REST API](https://img.shields.io/badge/REST-API-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 ![Render](https://img.shields.io/badge/Deployed%20on-Render-46E3B7?style=for-the-badge&logo=render&logoColor=white)
 
 Backend API for **ShipTrack** — a shipment tracking system designed to simulate how logistics platforms manage shipment flows, carriers, and delivery statuses.
@@ -33,10 +34,10 @@ It focuses on modeling shipment data, tracking events, and building API endpoint
 
 - `GET /api/shipments` – Fetch all shipments with optional filtering by status and search query
 - `GET /api/shipments/{id}` – Fetch a single shipment with full tracking history
-- `POST /api/shipments` – Create a new shipment with auto-generated tracking ID
+- `POST /api/shipments` – Create a new shipment with auto-generated tracking ID and optional weight
 - `GET /api/shipments/stats` – Fetch shipment volume per day for the last 30 days
-  
--  Shipment tracking event history
+- Shipment tracking event history
+- Weight-based carrier recommendation logic
 - Realistic logistics domain modeling
 - RESTful API design
 
@@ -46,11 +47,12 @@ It focuses on modeling shipment data, tracking events, and building API endpoint
 
 | Layer | Technology |
 |-------|-----------|
-| Framework | ASP.NET Core 10 Web API |
+| Framework | ASP.NET Core Web API |
 | Language | C# |
 | Architecture | Controller-based REST API |
 | Data | In-memory mock data (27 realistic shipments) |
 | CORS | Configured for frontend origin |
+| Containerization | Docker |
 | Deploy | Render |
 
 ---
@@ -65,6 +67,7 @@ ShipTrackApi/
 │   ├── Shipment.cs              # Shipment and TrackingEvent models
 │   └── ShipmentData.cs          # Mock data (27 shipments)
 ├── Program.cs                   # App setup, CORS, routing
+├── Dockerfile                   # Container configuration
 └── ShipTrackApi.csproj
 ```
 
@@ -98,6 +101,7 @@ GET /api/shipments?status=transit&search=Stockholm
     "carrier": "DHL",
     "status": "transit",
     "eta": "8 mar 2026",
+    "weight": 42.5,
     "history": [...]
   }
 ]
@@ -128,7 +132,8 @@ Creates a new shipment. Auto-generates a tracking ID with status `pending`.
   "recipientName": "Kund AB",
   "recipientCity": "Göteborg",
   "carrier": "PostNord",
-  "eta": "2026-03-15"
+  "eta": "2026-03-15",
+  "weight": 12.5
 }
 ```
 
@@ -144,8 +149,7 @@ Returns shipment count per day for the last 30 days.
 ```json
 [
   { "date": "05 Feb", "count": 0 },
-  { "date": "08 Feb", "count": 2 },
-  ...
+  { "date": "08 Feb", "count": 2 }
 ]
 ```
 
@@ -171,4 +175,16 @@ The API will be available at `http://localhost:5141`.
 
 ---
 
-Built by [Meghdad jafari](https://meghdadjafari.dev)
+## Docker
+
+```bash
+# Build image
+docker build -t shiptrack-api .
+
+# Run container
+docker run -p 8080:8080 shiptrack-api
+```
+
+---
+
+Built by [Meghdad Jafari](https://meghdadjafari.dev)
