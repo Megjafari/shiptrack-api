@@ -27,4 +27,6 @@ app.UseHttpsRedirection();
 app.UseCors("AllowFrontend");
 app.MapControllers();
 
+app.MapGet("/health", () => Results.Ok());
+
 app.Run();
